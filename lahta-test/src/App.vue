@@ -1,15 +1,11 @@
 <template>
   <div id="app">
+    <div v-bind:style="[myStyle, ourStyle]">kek</div>
+    <div v-bind:class="{ active: isAuth }">
+    ...
+    </div>
     <img src="./assets/logo.png">
     <router-view></router-view>
-    <ul>
-      <li
-        v-for="product in products"
-        :key="product.id"
-        >
-        {{product.name}}
-      </li>
-    </ul>
   </div>
 </template>
 
@@ -18,10 +14,9 @@ export default {
   name: 'app',
   data() {
     return {
-      products: [
-        { id: 1, name: 'iPhone7' },
-        { id: 2, name: 'iPhone6' },
-      ],
+      myStyle: { color: 'red', backgroundColor: 'rgb(0,0,255)' },
+      ourStyle: { fontSize: '36px', position: 'relative' },
+      isAuth: true,
     };
   },
 };
@@ -35,8 +30,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-li {
-  display: block;
 }
 </style>
