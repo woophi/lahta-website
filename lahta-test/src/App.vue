@@ -1,5 +1,14 @@
 <template>
   <div id="app">
+    <nav>
+      <div class="container">
+        <ul class="nav__left">
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/admin">admin</router-link></li>
+          <li><router-link to="/cart">cart</router-link></li>
+        </ul>
+      </div>
+    </nav>
     <div v-bind:style="[myStyle, ourStyle]">kek</div>
     <div v-bind:class="{ active: isAuth }">
     ...
