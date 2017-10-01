@@ -1,5 +1,13 @@
 <template>
   <div class="hello">
+    <input
+      type="text"
+      placeholder="Name"
+      v-model="name"
+      v-validate="'required'"
+      name="name"
+      :class="{'form-control': true, 'error': errors.has('name') }"
+    />
     <div class="title">
       <h1>{{msg}}</h1>
     </div>
@@ -43,6 +51,7 @@ export default {
       value: '',
       selected: '',
       picked: '',
+      name: 'kek',
     };
   },
 };
@@ -66,5 +75,9 @@ li {
 
 a {
   color: #42b983;
+}
+.form-control.error {
+  border-color: #FF3333;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 71, 71, 0.6);
 }
 </style>
