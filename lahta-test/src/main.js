@@ -7,25 +7,9 @@ import router from './router';
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
-const counter = 0;
 new Vue({
   el: '#app',
   router,
-  template: `
-    <div>
-      <p>{{counter}}</p>
-      <button v-on:click="incrementCounter">++</button>
-    </div>
-    `,
-  data() {
-    return {
-      counter,
-    };
-  },
-  methods: {
-    incrementCounter() {
-      this.counter += 1;
-    },
-  },
+  template: '<App/>',
   components: { App },
 });
