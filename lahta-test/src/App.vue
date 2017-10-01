@@ -2,9 +2,14 @@
   <div id="app">
     <img src="./assets/logo.png">
     <router-view></router-view>
-    <p id="text" v-if="isAuth">Welcome...</p>
-
-    <button else>Login</button>
+    <ul>
+      <li
+        v-for="product in products"
+        :key="product.id"
+        >
+        {{product.name}}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -13,7 +18,10 @@ export default {
   name: 'app',
   data() {
     return {
-      isAuth: false,
+      products: [
+        { id: 1, name: 'iPhone7' },
+        { id: 2, name: 'iPhone6' },
+      ],
     };
   },
 };
@@ -27,5 +35,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+li {
+  display: block;
 }
 </style>
