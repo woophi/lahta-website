@@ -2,8 +2,9 @@
   <div id="app">
     <img src="./assets/logo.png">
     <router-view></router-view>
-    <button @click="toggle">Click me</button>
-    <p id="text" v-show="isShown">Lorem ipsum dolor sit amet,...</p>
+    <p id="text" v-if="isAuth">Welcome...</p>
+
+    <button else>Login</button>
   </div>
 </template>
 
@@ -12,13 +13,8 @@ export default {
   name: 'app',
   data() {
     return {
-      isShown: false,
+      isAuth: false,
     };
-  },
-  methods: {
-    toggle() {
-      this.isShown = !this.isShown;
-    },
   },
 };
 </script>
