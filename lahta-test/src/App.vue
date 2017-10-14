@@ -1,5 +1,25 @@
 <template>
   <div id="app">
+    <!-- <v-app>
+      <v-navigation-drawer app>
+          <router-link to="/">Главная</router-link>
+          <router-link to="/about">О Компании</router-link>
+          <router-link to="/services">Услуги</router-link>
+          <router-link to="/shares">Акции</router-link>
+          <router-link to="/buildings">Объекты</router-link>
+          <router-link to="/licence">Лицензии и Сертификаты</router-link>
+          <router-link to="/contacts">Обратная связь</router-link>
+      </v-navigation-drawer>
+      <v-toolbar app></v-toolbar>
+      <main>
+        <v-content>
+          <router-view>
+            <v-container fluid></v-container>
+          </router-view>
+        </v-content>
+      </main>
+      <v-footer app></v-footer>
+    </v-app> -->
     <div>
       Название: ООО "ЛАХТА ИНЖИНИРИНГ СПБ"
     </div>
@@ -51,6 +71,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

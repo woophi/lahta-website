@@ -2,10 +2,12 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import VeeValidate from 'vee-validate';
+import Carousel3d from 'vue-carousel-3d';
 import Vuetify from 'vuetify';
 import App from './App';
 import router from './router';
 
+Vue.use(Carousel3d);
 Vue.use(Vuetify);
 Vue.use(VeeValidate);
 Vue.config.productionTip = false;
