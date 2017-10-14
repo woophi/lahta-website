@@ -1,36 +1,22 @@
 <template>
   <div id="app">
-    <div>
-      Название: ООО "ЛАХТА ИНЖИНИРИНГ СПБ"
-    </div>
-    <div>
-      Телефон: 222222222222
-    </div>
-    <div>
-      Организация внутренних инженерных систем, зданий и сооружений.
-      <ul>
-        <li>вентиляция</li>
-        <li>кондиционирование</li>
-        <li>отопление</li>
-        <li>водоснабжение</li>
-        <li>автоматизация</li>
-      </ul>
-    </div>
     <nav>
       <div class="container">
         <ul class="nav__left">
           <li><router-link to="/">Главная</router-link></li>
-          <li><router-link to="/about">О Компании</router-link></li>
           <li><router-link to="/services">Услуги</router-link></li>
-          <li><router-link to="/shares">Акции</router-link></li>
           <li><router-link to="/buildings">Объекты</router-link></li>
           <li><router-link to="/licence">Лицензии и Сертификаты</router-link></li>
           <li><router-link to="/contacts">Обратная связь</router-link></li>
         </ul>
       </div>
     </nav>
+    <div v-bind:style="[myStyle, ourStyle]">kek</div>
+    <div v-bind:class="{ active: isAuth }">
+    ...
+    </div>
+    <img src="./assets/logo.png">
     <router-view></router-view>
-    <div>Футер</div>
   </div>
 </template>
 
@@ -39,6 +25,9 @@ export default {
   name: 'app',
   data() {
     return {
+      myStyle: { color: 'red', backgroundColor: 'rgb(0,0,255)' },
+      ourStyle: { fontSize: '36px', position: 'relative' },
+      isAuth: true,
     };
   },
 };

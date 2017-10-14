@@ -8,10 +8,10 @@
 
 <script>
 export default {
-  name: 'admin',
+  name: 'services',
   data() {
     return {
-      msg: 'Welcome to the Admin Page',
+      msg: 'Welcome to the Services Page',
     };
   },
 };

@@ -1,44 +1,10 @@
 <template>
   <div class="hello">
-    <input
-      type="text"
-      placeholder="Name"
-      v-model="name"
-      v-validate="'required'"
-      name="name"
-      :class="{'form-control': true, 'error': errors.has('name') }"
-    />
     <div class="title">
       <h1>{{msg}}</h1>
     </div>
-    <input v-model="value" placeholder="type here">
-    <p>You typed {{ value }}</p>
-
-    <input type="checkbox" id="checkbox" v-model="checked">
-    <label for="checkbox">{{ checked }}</label>
-    <br>
-    <span>Picked: {{ picked }}</span>
-    <br>
-    <!-- Radio Buttons-->
-    <input type="radio" id="one" value="One" v-model="picked">
-    <label for="one">One</label>
-
-    <br>
-
-    <input type="radio" id="two" value="Two" v-model="picked">
-    <label for="two">Two</label>
-
-    <br>
-
-    <!-- Select Boxes-->
-    <select v-model="selected">
-      <option disabled value="">Please select one</option>
-      <option>A</option>
-      <option>B</option>
-      <option>C</option>
-    </select>
-
-    <span>Selected: {{ selected }}</span>
+    <div>Слайдер</div>
+    <div>Акции</div>
   </div>
 </template>
 
@@ -48,10 +14,6 @@ export default {
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',
-      value: '',
-      selected: '',
-      picked: '',
-      name: 'kek',
     };
   },
 };
