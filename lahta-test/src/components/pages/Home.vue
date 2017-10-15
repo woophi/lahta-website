@@ -3,14 +3,7 @@
     <div class="title">
       <h1>{{msg}}</h1>
     </div>
-    <!-- <v-carousel>
-      <v-carousel-item
-        v-for="(item,i) in items"
-        v-bind:src="item.src"
-        :key="i"
-      ></v-carousel-item>
-    </v-carousel> -->
-    <div class="hui">
+    <div class="carousel-cotainer">
       <carousel-3d
         :controls-visible="true"
         :width="600"
@@ -58,9 +51,8 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
-.hui
+.carousel-cotainer
   width 100%
   height 500px
 </style>
