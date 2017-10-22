@@ -145,6 +145,8 @@ export default {
 }
 .main-header
   display flex
+  padding 0.5rem
+  flex-wrap wrap
   flex 1
   flex-grow 1
   color #fff
@@ -159,11 +161,12 @@ a
 
 .main-title
   box-sizing border-box
-  width calc(100% - 550px)
+  width calc(100% - 250px)
   min-width 300px
   display: flex;
   flex-direction column
   justify-content center
+  margin auto
   span
     color rgba(255, 255, 255, 0.7)
 
@@ -172,10 +175,11 @@ a
   font-weight bold
 
 .main-card-flex
+  margin auto
   box-sizing border-box
   display flex
   min-width 250px
-  width 550px
+  width 250px
   justify-content center
 
 .main-card

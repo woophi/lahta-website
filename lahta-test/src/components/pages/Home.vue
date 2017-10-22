@@ -1,8 +1,5 @@
 <template>
-  <div class="hello">
-    <div class="title">
-      <h1>{{msg}}</h1>
-    </div>
+  <div>
     <div class="carousel-cotainer">
       <carousel-3d
         :controls-visible="true"
@@ -31,7 +28,6 @@ export default {
   name: 'home',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
       items: [
         {
           src: Licence1,
