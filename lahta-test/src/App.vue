@@ -39,34 +39,24 @@
       </div>
     </div>
 
-    <nav>
+    <nav class="navigation">
       <router-link  to="/" exact>
         <v-btn
-          v-if="exact"
-          color="info"
-        >
-          Главная
-        </v-btn>
-        <v-btn
-          v-else
           color="info"
           outline
         >
+          <v-icon>fa-home</v-icon>
+          &nbsp;
           Главная
         </v-btn>
       </router-link>
       <router-link to="/about" exact>
         <v-btn
           color="info"
-          v-if="exact"
-        >
-          О Компании
-        </v-btn>
-        <v-btn
-          v-else
-          color="info"
           outline
         >
+          <v-icon>fa-bank</v-icon>
+          &nbsp;
           О Компании
         </v-btn>
       </router-link>
@@ -75,6 +65,8 @@
           color="info"
           outline
         >
+          <v-icon>fa-diamond</v-icon>
+          &nbsp;
           Услуги
         </v-btn>
       </router-link>
@@ -83,6 +75,8 @@
           color="info"
           outline
         >
+          <v-icon>fa-star</v-icon>
+          &nbsp;
           Акции
         </v-btn>
       </router-link>
@@ -91,6 +85,8 @@
           color="info"
           outline
         >
+          <v-icon>fa-building</v-icon>
+          &nbsp;
           Объекты
         </v-btn>
       </router-link>
@@ -99,6 +95,8 @@
           color="info"
           outline
         >
+          <v-icon>fa-book</v-icon>
+          &nbsp;
           Лицензии и Сертификаты
         </v-btn>
       </router-link>
@@ -107,6 +105,8 @@
           color="info"
           outline
         >
+          <v-icon>fa-commenting</v-icon>
+          &nbsp;
           Контакты
         </v-btn>
       </router-link>
@@ -127,7 +127,6 @@ export default {
   name: 'app',
   data() {
     return {
-      exact: false,
     };
   },
 };
@@ -190,6 +189,8 @@ a
     margin-bottom 0.25rem
     text-align left
 
+.navigation
+  margin 1rem auto
 
 .main-footer
   color #757575
