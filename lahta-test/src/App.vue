@@ -105,7 +105,7 @@
           color="info"
           outline
         >
-          <v-icon>fa-commenting</v-icon>
+          <v-icon>fa-pencil-square</v-icon>
           &nbsp;
           Контакты
         </v-btn>
