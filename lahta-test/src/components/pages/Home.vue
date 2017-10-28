@@ -2,10 +2,12 @@
   <div>
     <div class="carousel-cotainer">
       <carousel-3d
-        :controls-visible="true"
+        :clickable="false"
+        :space="600"
         :width="600"
         :height="500"
         :display="3"
+        :controlsVisible="true"
       >
         <slide
           v-for="(item,i) in items"
@@ -16,7 +18,10 @@
         </slide>
       </carousel-3d>
     </div>
-    <div>Акции: Кондиционеры из Японии от 10000</div>
+    <v-btn class="btn-shares" fab dark color="red darken-2">
+      <v-icon dark>fa-star</v-icon>
+      Акция
+    </v-btn>
   </div>
 </template>
 
@@ -38,9 +43,6 @@ export default {
         {
           src: Licence2,
         },
-        {
-          src: Licence2,
-        },
       ],
     };
   },
@@ -51,4 +53,9 @@ export default {
 .carousel-cotainer
   width 100%
   height 500px
+
+.btn-shares
+  position fixed
+  bottom 3rem
+  right 1rem
 </style>
