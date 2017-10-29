@@ -43,7 +43,7 @@
       <router-link  to="/" exact>
         <v-btn
           color="info"
-          outline
+          :outline="!(routerPath === '/')"
         >
           <v-icon>fa-home</v-icon>
           &nbsp;
@@ -52,8 +52,8 @@
       </router-link>
       <router-link to="/about" exact>
         <v-btn
+          :outline="!(routerPath === '/about')"
           color="info"
-          outline
         >
           <v-icon>fa-bank</v-icon>
           &nbsp;
@@ -62,8 +62,8 @@
       </router-link>
       <router-link to="/services">
         <v-btn
+          :outline="!(routerPath === '/services')"
           color="info"
-          outline
         >
           <v-icon>fa-diamond</v-icon>
           &nbsp;
@@ -72,8 +72,8 @@
       </router-link>
       <router-link to="/shares">
         <v-btn
+          :outline="!(routerPath === '/shares')"
           color="info"
-          outline
         >
           <v-icon>fa-star</v-icon>
           &nbsp;
@@ -82,8 +82,8 @@
       </router-link>
       <router-link to="/buildings">
         <v-btn
+          :outline="!(routerPath === '/buildings')"
           color="info"
-          outline
         >
           <v-icon>fa-building</v-icon>
           &nbsp;
@@ -92,8 +92,8 @@
       </router-link>
       <router-link to="/licence">
         <v-btn
+          :outline="!(routerPath === '/licence')"
           color="info"
-          outline
         >
           <v-icon>fa-book</v-icon>
           &nbsp;
@@ -102,8 +102,8 @@
       </router-link>
       <router-link to="/contacts">
         <v-btn
+          :outline="!(routerPath === '/contacts')"
           color="info"
-          outline
         >
           <v-icon>fa-pencil-square</v-icon>
           &nbsp;
@@ -123,11 +123,21 @@
 </template>
 
 <script>
+import router from './router';
+
 export default {
   name: 'app',
   data() {
     return {
+      routerPath: '/',
+      outline: true,
     };
+  },
+  beforeCreate() {
+    this.routerPath = router.currentRoute.path;
+  },
+  beforeUpdate() {
+    this.routerPath = router.currentRoute.path;
   },
 };
 </script>
@@ -135,6 +145,8 @@ export default {
 <style lang="stylus">
 body
   padding 0 !important
+  width 100%
+  height 100%
 #app {
   user-select none
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
