@@ -133,6 +133,8 @@ export default {
 </script>
 
 <style lang="stylus">
+body
+  padding 0 !important
 #app {
   user-select none
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -154,9 +156,9 @@ export default {
 
 a
   text-decoration none
-  color #fff
+  color inherit
   &:hover, &:active, &:link
-    color  red
+    color inherit
 
 .main-title
   box-sizing border-box
