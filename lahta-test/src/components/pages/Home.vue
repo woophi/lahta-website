@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home-container">
     <div class="carousel-cotainer">
       <carousel-3d
         :clickable="false"
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import Licence1 from '@/assets/sxhema.jpg';
+import SliderImg1 from '@/assets/sxhema.jpg';
 import Licence2 from '@/assets/bird.jpg';
 
 export default {
@@ -35,7 +35,7 @@ export default {
     return {
       items: [
         {
-          src: Licence1,
+          src: SliderImg1,
         },
         {
           src: Licence2,
@@ -50,10 +50,13 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+.home-container
+  margin 1rem
 .carousel-cotainer
   width 100%
-  height 500px
-
+  height 100%
+.carousel-3d-slide img
+  height 100%
 .btn-shares
   position fixed
   bottom 3rem

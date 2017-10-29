@@ -35,9 +35,27 @@
 <script>
 export default {
   name: 'services',
-  data() {
-    return {
-    };
-  },
 };
 </script>
+
+<style lang="stylus">
+.about-text
+  display flex
+  flex-direction column
+  align-items center
+  margin 1rem 3rem
+
+.about-text > p
+  display flex
+  margin 1rem
+  flex-wrap wrap
+  text-align left
+  max-width 1000px
+  min-width 250px
+  border-left 5px solid #1976d2
+  padding 1rem 0 1rem 24px
+  font-size 18px
+  font-weight 300
+  box-sizing border-box
+
+</style>
