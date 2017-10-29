@@ -90,7 +90,6 @@ form
   flex-direction column
   min-width 250px
   max-width 500px
-  padding 0.5rem
 
 .btn-submit
   display flex
