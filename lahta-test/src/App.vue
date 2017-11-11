@@ -5,12 +5,14 @@
         <p class="main-title-header">ООО "ЛАХТА ИНЖИНИРИНГ СПБ"</p>
         <span>Организация внутренних инженерных систем, зданий и сооружений.</span>
         <div>
-          <v-btn
-            flat
-          >
-            <v-icon>fa-phone</v-icon>&nbsp;
-            773260825
-          </v-btn>
+          <a href="tel:+78122402142">
+            <v-btn
+              flat
+            >
+              <v-icon>fa-phone</v-icon>&nbsp;
+              +7 (812) 240-21-42
+            </v-btn>
+          </a>
         </div>
       </div>
       <div class="main-card-flex">
@@ -119,13 +121,13 @@ export default {
   name: 'app',
   data() {
     return {
-      routerPath: '/',
+      routerPath: router.currentRoute.path,
       outline: true,
     };
   },
-  beforeCreate() {
-    this.routerPath = router.currentRoute.path;
-  },
+  // beforeCreate() {
+  //   this.routerPath = router.currentRoute.path;
+  // },
   beforeUpdate() {
     this.routerPath = router.currentRoute.path;
   },

@@ -1,7 +1,6 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
-import VeeValidate from 'vee-validate';
 import Carousel3d from 'vue-carousel-3d';
 import Vuetify from 'vuetify';
 import VueProgressiveImage from 'vue-progressive-image';
@@ -11,7 +10,6 @@ import router from './router';
 Vue.use(VueProgressiveImage);
 Vue.use(Carousel3d);
 Vue.use(Vuetify);
-Vue.use(VeeValidate);
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

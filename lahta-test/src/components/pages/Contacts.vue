@@ -23,7 +23,7 @@
         </div>
         <v-icon>fa-envelope</v-icon>
         <div class="mail">
-          <a href="mailto:mail@mail.ru">mail@mail.ru</a>
+          <a href="mailto:lahtaeng_spb@mail.ru">lahtaeng_spb@mail.ru</a>
         </div>
       </div>
     </v-flex>
