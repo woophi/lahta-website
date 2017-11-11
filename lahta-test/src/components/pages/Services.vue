@@ -49,7 +49,7 @@ export default {
   display flex
   margin 1rem
   flex-wrap wrap
-  text-align left
+  text-align justify
   max-width 1000px
   min-width 250px
   border-left 5px solid #1976d2

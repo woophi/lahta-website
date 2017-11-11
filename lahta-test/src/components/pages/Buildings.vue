@@ -1,14 +1,27 @@
 <template>
+<v-app id="inspire" >
+
   <div class="all-objects">
-    <lightbox
-      id="mylightbox"
-      :images="images"
-      :image_class=" 'img-responsive img-rounded' "
-      :album_class=" 'my-album-class' "
-      :options="options">
-    </lightbox>
+    <a class="object-click" @click.stop="dialog2 = true">
+      <progressive-img  class="kek" src="https://unsplash.it/1920/1080?image=10" />
+    </a>
+
+    <v-dialog v-model="dialog2">
+      <v-card>
+        <v-card-title>
+            Dialog 2
+        </v-card-title>
+        <v-card-text>
+          sdf
+        </v-card-text>
+        <v-card-actions>
+          <v-btn color="primary" flat @click.stop="dialog2=false">Close</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
     <ListObjects class="list-objects"></ListObjects>
   </div>
+</v-app>
 </template>
 
 <script>
@@ -27,6 +40,7 @@ export default {
   },
   data() {
     return {
+      dialog2: false,
       images: [
         {
           src: Licence1,
@@ -68,18 +82,17 @@ export default {
   margin 1rem auto
   width 90%
 
-.my-gallery
-  display flex
-  flex-wrap wrap
-  margin auto
-  width 95%
-  > a
-    width 22%
-    margin 1rem auto
-    display flex
-    min-width 320px
-  > a > img
-    width 100%
-    height 300px
+.object-click
+  cursor pointer
+  width auto
+  height auto
+
+.kek
+  width 500px
+  margin 1px
+
+.application
+  min-height auto !important
+  background-color inherit !important
 </style>
 
