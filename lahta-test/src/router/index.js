@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/components/pages/Home';
-import Shares from '@/components/pages/Shares';
+// import Shares from '@/components/pages/Shares';
 import Services from '@/components/pages/Services';
 import About from '@/components/pages/About';
 import Buildings from '@/components/pages/Buildings';
@@ -23,11 +23,11 @@ export default new Router({
       name: 'about',
       component: About,
     },
-    {
-      path: '/shares',
-      name: 'shares',
-      component: Shares,
-    },
+    // {
+    //   path: '/shares',
+    //   name: 'shares',
+    //   component: Shares,
+    // },
     {
       path: '/services',
       name: 'Services',

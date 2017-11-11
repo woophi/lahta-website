@@ -2,21 +2,26 @@
 <v-app id="inspire" >
 
   <div class="all-objects">
-    <a class="object-click" @click.stop="dialog2 = true">
-      <progressive-img  class="kek" src="https://unsplash.it/1920/1080?image=10" />
-    </a>
+    <div class="objects-grid">
+      <a
+        v-for="(image,i) in images"
+        :key="i"
+        class="object-click"
+        @click.stop="image.open = true"
+      >
+        <progressive-img  class="kek" :src="image.src" />
+      </a>
+    </div>
 
-    <v-dialog v-model="dialog2">
+    <v-dialog v-model="image.open" v-for="(image,i) in images" :key="i">
       <v-card>
         <v-card-title>
-            Dialog 2
+            <b>{{image.title}}</b>
+          <v-card-actions>
+            <v-btn color="primary" flat @click.stop="image.open=false">Закрыть</v-btn>
+          </v-card-actions>
         </v-card-title>
-        <v-card-text>
-          sdf
-        </v-card-text>
-        <v-card-actions>
-          <v-btn color="primary" flat @click.stop="dialog2=false">Close</v-btn>
-        </v-card-actions>
+        <progressive-img :src="image.src" />
       </v-card>
     </v-dialog>
     <ListObjects class="list-objects"></ListObjects>
@@ -26,45 +31,98 @@
 
 <script>
 import ListObjects from '@/components/pages/ListObjects';
-import Lightbox from 'vue-simple-lightbox';
-import Licence1 from '@/assets/licence1.jpg';
-import Licence2 from '@/assets/licence2.jpg';
-import Licence3 from '@/assets/licence3.jpg';
-import Licence4 from '@/assets/licence4.jpg';
+import Object1 from '@/assets/objects/object1.jpg';
+import Object2 from '@/assets/objects/object2.jpg';
+import Object3 from '@/assets/objects/object3.jpg';
+import Object4 from '@/assets/objects/object4.jpg';
+import Object5 from '@/assets/objects/object5.jpg';
+import Object6 from '@/assets/objects/object6.jpg';
+import Object7 from '@/assets/objects/object7.jpg';
+import Object8 from '@/assets/objects/object8.jpg';
+import Object9 from '@/assets/objects/object9.jpg';
+import Object10 from '@/assets/objects/object10.jpg';
+import Object11 from '@/assets/objects/object11.jpg';
+import Object12 from '@/assets/objects/object12.jpg';
+import Object13 from '@/assets/objects/object13.jpg';
+import Object14 from '@/assets/objects/object14.jpg';
 
 export default {
   name: 'buildings',
   components: {
     ListObjects,
-    Lightbox,
   },
   data() {
     return {
-      dialog2: false,
       images: [
         {
-          src: Licence1,
-          title: '',
+          src: Object1,
+          title: 'Конгрессно-выставочный центр ЭкспоФорум',
+          open: false,
         },
         {
-          src: Licence2,
-          title: '',
+          src: Object2,
+          title: 'Ладожский вокзал',
+          open: false,
         },
         {
-          src: Licence3,
-          title: '',
+          src: Object3,
+          title: 'Логоцентр  «МЛП-КАД»',
+          open: false,
         },
         {
-          src: Licence4,
-          title: '',
+          src: Object4,
+          title: 'Медсанчасть № 70',
+          open: false,
         },
         {
-          src: Licence4,
-          title: '',
+          src: Object5,
+          title: 'Республика Карелия, г. Сортавала, малоэтажный жилой комплекс, Дача Винтера',
+          open: false,
         },
         {
-          src: Licence4,
-          title: '',
+          src: Object6,
+          title: 'Санкт-Петербург, «Центр обслуживания населения» на Богатырском пр',
+          open: false,
+        },
+        {
+          src: Object7,
+          title: 'Санкт-Петербург, В.О., 26 линия, БЦ «Биржа',
+          open: false,
+        },
+        {
+          src: Object8,
+          title: 'Санкт-Петербург, В.О., 26 линия, ЖК «Престиж»,',
+          open: false,
+        },
+        {
+          src: Object9,
+          title: 'Санкт-Петербург, ЖК «Московские Ворота»,',
+          open: false,
+        },
+        {
+          src: Object10,
+          title: 'Санкт-Петербург, Таможенно-логистический комплекс «Осиновая роща',
+          open: false,
+        },
+        {
+          src: Object11,
+          title: 'Суд Невского района',
+          open: false,
+        },
+        {
+          src: Object12,
+          title: 'Истринский  район  элитное строительство-поселок   «Greenfield»',
+          open: false,
+        },
+        {
+          src: Object13,
+          title: 'Северный Версаль',
+          open: false,
+        },
+        {
+          src: Object14,
+          title: 'Коттеджный поселок Консульская деревня',
+          open: false,
         },
       ],
       options: {
@@ -84,15 +142,30 @@ export default {
 
 .object-click
   cursor pointer
-  width auto
-  height auto
+  width 25%
 
 .kek
-  width 500px
-  margin 1px
+  margin 1rem
+
+.dialog
+  max-width 900px !important
+  overflow hidden !important
 
 .application
   min-height auto !important
   background-color inherit !important
+
+.objects-grid
+  display flex
+  flex-wrap wrap
+  margin 1rem auto
+  width 95%
+
+.card__title
+  justify-content space-between !important
+
+.btn-navigation
+  position absolute
+  z-index 1000
 </style>
 
