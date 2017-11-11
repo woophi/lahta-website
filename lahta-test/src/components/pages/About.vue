@@ -35,7 +35,7 @@ export default {
   border-left 5px solid #1976d2
   padding 1rem 0 1rem 24px
   font-size 18px
-  font-weight 300
+  font-weight 500
   box-sizing border-box
 
 </style>

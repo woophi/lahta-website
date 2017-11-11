@@ -103,13 +103,18 @@
         </v-btn>
       </router-link>
     </nav>
-    <router-view></router-view>
+    <router-view class="super-height"></router-view>
     <v-footer
       class="pa-3"
       color="grey darken-4"
     >
       <v-spacer></v-spacer>
-      <div class="main-footer">© ООО "ЛАХТА ИНЖИНИРИНГ СПБ" {{ new Date().getFullYear() }}</div>
+      <div class="main-footer">
+        <b>ОГРН</b> 1147847436736
+        <b>ИНН</b> 7811598377
+        <b>КПП</b> 781101001
+        © ООО "ЛАХТА ИНЖИНИРИНГ СПБ" {{ new Date().getFullYear() }}
+      </div>
     </v-footer>
   </div>
 </template>
@@ -141,13 +146,16 @@ body
   height 100%
 #app {
   user-select none
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "SF Optimized", system-ui, -apple-system, BlinkMacSystemFont, ".SFNSText-Regular", "Segoe UI", "Roboto", sans-serif
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   font-size 16px !important
 }
+.super-height
+  min-height 60vh
+
 .main-header
   display flex
   padding 0.5rem
@@ -173,7 +181,8 @@ a
   justify-content center
   margin auto
   span
-    color rgba(255, 255, 255, 0.7)
+    color rgba(255, 255, 255, 0.9)
+    font-size 18px
 
 .main-title-header
   font-size 2rem
@@ -194,10 +203,12 @@ a
   p
     margin-bottom 0.25rem
     text-align left
+    font-weight 700
 
 .navigation
   margin 1rem auto
 
 .main-footer
+  user-select text
   color #757575
 </style>

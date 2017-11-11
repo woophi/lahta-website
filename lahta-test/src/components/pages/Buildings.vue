@@ -16,10 +16,8 @@
     <v-dialog v-model="image.open" v-for="(image,i) in images" :key="i">
       <v-card>
         <v-card-title>
-            <b>{{image.title}}</b>
-          <v-card-actions>
-            <v-btn color="primary" flat @click.stop="image.open=false">Закрыть</v-btn>
-          </v-card-actions>
+          <b class="card-header">{{image.title}}</b>
+          <v-btn class="card-btn-absolute" @click.stop="image.open=false"><v-icon>fa-times</v-icon></v-btn>
         </v-card-title>
         <progressive-img :src="image.src" />
       </v-card>
@@ -45,6 +43,8 @@ import Object11 from '@/assets/objects/object11.jpg';
 import Object12 from '@/assets/objects/object12.jpg';
 import Object13 from '@/assets/objects/object13.jpg';
 import Object14 from '@/assets/objects/object14.jpg';
+import Object15 from '@/assets/objects/object15.jpg';
+import Object16 from '@/assets/objects/object16.jpg';
 
 export default {
   name: 'buildings',
@@ -124,6 +124,16 @@ export default {
           title: 'Коттеджный поселок «Консульская деревня», Репино, г. Санкт-Петербург',
           open: false,
         },
+        {
+          src: Object15,
+          title: 'Завод «Штурманские приборы», г. Санкт-Петербург',
+          open: false,
+        },
+        {
+          src: Object16,
+          title: 'АО «Ленгазспецстрой», г. Санкт-Петербург',
+          open: false,
+        },
       ],
       options: {
         closeText: 'X',
@@ -163,9 +173,17 @@ export default {
 
 .card__title
   justify-content space-between !important
+  position relative
 
-.btn-navigation
+.card-header
+  margin-right 4rem
+  text-align left
+
+.card-btn-absolute
   position absolute
-  z-index 1000
+  min-width 40px
+  height 40px
+  top 8px
+  right 8px
 </style>
 

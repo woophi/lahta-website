@@ -3,11 +3,12 @@
     <div class="carousel-cotainer">
       <carousel-3d
         :clickable="false"
-        :space="600"
-        :width="600"
-        :height="500"
+        :space="700"
+        :width="550"
+        :height="350"
         :display="3"
         :controlsVisible="true"
+        :perspective="0"
       >
         <slide
           v-for="(item,i) in items"
@@ -22,8 +23,9 @@
 </template>
 
 <script>
-import SliderImg1 from '@/assets/sxhema.jpg';
-import Licence2 from '@/assets/bird.jpg';
+import PreviewLeft from '@/assets/previewLeft.jpg';
+import PreviewCenter from '@/assets/previewCenter.jpg';
+import PreviewRight from '@/assets/previewRight.jpg';
 
 export default {
   name: 'home',
@@ -31,13 +33,13 @@ export default {
     return {
       items: [
         {
-          src: SliderImg1,
+          src: PreviewCenter,
         },
         {
-          src: Licence2,
+          src: PreviewRight,
         },
         {
-          src: Licence2,
+          src: PreviewLeft,
         },
       ],
     };
