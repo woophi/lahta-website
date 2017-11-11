@@ -18,10 +18,6 @@
         </slide>
       </carousel-3d>
     </div>
-    <v-btn class="btn-shares" fab dark color="red darken-2">
-      <v-icon dark>fa-star</v-icon>
-      Акция
-    </v-btn>
   </div>
 </template>
 
@@ -57,8 +53,4 @@ export default {
   height 100%
 .carousel-3d-slide img
   height 100%
-.btn-shares
-  position fixed
-  bottom 3rem
-  right 1rem
 </style>

@@ -5,12 +5,13 @@ import Shares from '@/components/pages/Shares';
 import Services from '@/components/pages/Services';
 import About from '@/components/pages/About';
 import Buildings from '@/components/pages/Buildings';
-import Licence from '@/components/pages/Licence';
+import Licences from '@/components/pages/Licences';
 import Contacts from '@/components/pages/Contacts';
 
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -38,9 +39,9 @@ export default new Router({
       component: Buildings,
     },
     {
-      path: '/licence',
-      name: 'Licence',
-      component: Licence,
+      path: '/licences',
+      name: 'Licences',
+      component: Licences,
     },
     {
       path: '/contacts',

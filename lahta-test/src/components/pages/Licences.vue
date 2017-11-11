@@ -16,13 +16,13 @@ import Licence1 from '@/assets/licence1.jpg';
 import Licence2 from '@/assets/licence2.jpg';
 import Licence3 from '@/assets/licence3.jpg';
 import Licence4 from '@/assets/licence4.jpg';
-
+import Licence5 from '@/assets/licence5.jpg';
 
 export default {
   components: {
     Lightbox,
   },
-  name: 'licence',
+  name: 'licences',
   data() {
     return {
       images: [
@@ -42,6 +42,10 @@ export default {
           src: Licence4,
           title: '',
         },
+        {
+          src: Licence5,
+          title: '',
+        },
       ],
       options: {
         closeText: 'X',
@@ -53,7 +57,7 @@ export default {
 
 <style lang="stylus">
 .licences
-  margin 7rem 0
+  margin 3rem 0
 
 
 .my-gallery
@@ -67,6 +71,6 @@ export default {
     display flex
     min-width 320px
   > a > img
-    width 100%
-    height 300px
+    width 100% !important
+    height 300px !important
 </style>

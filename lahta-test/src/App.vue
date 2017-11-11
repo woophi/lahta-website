@@ -70,16 +70,6 @@
           Услуги
         </v-btn>
       </router-link>
-      <router-link to="/shares">
-        <v-btn
-          :outline="!(routerPath === '/shares')"
-          color="info"
-        >
-          <v-icon>fa-star</v-icon>
-          &nbsp;
-          Акции
-        </v-btn>
-      </router-link>
       <router-link to="/buildings">
         <v-btn
           :outline="!(routerPath === '/buildings')"
@@ -90,9 +80,9 @@
           Объекты
         </v-btn>
       </router-link>
-      <router-link to="/licence">
+      <router-link to="/licences">
         <v-btn
-          :outline="!(routerPath === '/licence')"
+          :outline="!(routerPath === '/licences')"
           color="info"
         >
           <v-icon>fa-book</v-icon>
