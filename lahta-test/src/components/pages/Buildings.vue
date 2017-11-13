@@ -15,7 +15,7 @@
 
     <v-dialog v-model="image.open" v-for="(image,i) in images" :key="i">
       <v-card>
-        <v-card-title>
+        <v-card-title class="card-title">
           <b class="card-header">{{image.title}}</b>
           <v-btn class="card-btn-absolute" @click.stop="image.open=false"><v-icon>fa-times</v-icon></v-btn>
         </v-card-title>
@@ -171,9 +171,10 @@ export default {
   margin 1rem auto
   width 95%
 
-.card__title
+.card-title
   justify-content space-between !important
   position relative
+  margin-bottom 0.5rem
 
 .card-header
   margin-right 4rem

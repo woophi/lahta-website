@@ -1,4 +1,5 @@
 <template>
+<v-app id="inspire" >
   <v-layout row wrap>
     <v-flex xs12 sm6 md4 order-md1 order-sm1>
       <div class="contacts-form">
@@ -52,6 +53,7 @@
       </div>
     </v-flex>
   </v-layout>
+</v-app>
 </template>
 
 <script>
@@ -89,4 +91,8 @@ export default {
   margin 1rem auto
   text-align left
   padding-left 1rem
+
+.application
+  min-height auto !important
+  background-color inherit !important
 </style>
