@@ -7,6 +7,8 @@ import VueProgressiveImage from 'vue-progressive-image';
 import App from './App';
 import router from './router';
 
+import('vuetify/dist/vuetify.min.css');
+
 Vue.use(VueProgressiveImage);
 Vue.use(Carousel3d);
 Vue.use(Vuetify);
