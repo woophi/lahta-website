@@ -173,18 +173,18 @@ export default {
 
 .card-title
   justify-content space-between !important
-  position relative
-  margin-bottom 0.5rem
+  position relative !important
+  margin-bottom 0.5rem !important
 
 .card-header
   margin-right 4rem
   text-align left
 
 .card-btn-absolute
-  position absolute
-  min-width 40px
-  height 40px
-  top 8px
-  right 8px
+  position absolute !important
+  min-width 40px  !important
+  height 40px !important
+  top 8px !important
+  right 8px !important
 </style>
 
