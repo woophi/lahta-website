@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div>
     <div class="main-header">
       <div class="main-title">
         <p class="main-title-header">ООО "ЛАХТА ИНЖИНИРИНГ СПБ"</p>
@@ -116,18 +117,27 @@
         © ООО "ЛАХТА ИНЖИНИРИНГ СПБ" {{ new Date().getFullYear() }}
       </div>
     </v-footer>
+    </div>
+    <div v-if="loading" class="absolute-loader">
+      <Spinner color="#2e7bb3" ></Spinner>
+    </div>
   </div>
 </template>
 
 <script>
+import Spinner from '@/components/pages/Spinner';
 import router from './router';
 
 export default {
   name: 'app',
+  components: {
+    Spinner,
+  },
   data() {
     return {
       routerPath: router.currentRoute.path,
       outline: true,
+      loading: true,
     };
   },
   // beforeCreate() {
@@ -136,6 +146,14 @@ export default {
   beforeUpdate() {
     this.routerPath = router.currentRoute.path;
   },
+  mounted() {
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      document.body.style.overflow = 'initial';
+      this.loading = false;
+    }, 1000);
+  },
+
 };
 </script>
 
@@ -211,4 +229,18 @@ a
 .main-footer
   user-select text
   color #757575
+
+.absolute-loader
+  position absolute
+  display flex
+  top 0
+  left 0
+  z-index 10000
+  background-color #fff
+  width 100%
+  height 100%
+  overflow hidden
+  flex-direction column
+.v-spinner
+  margin auto
 </style>
