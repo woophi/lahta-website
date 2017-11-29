@@ -9,7 +9,7 @@
         class="object-click"
         @click.stop="image.open = true"
       >
-        <progressive-img  class="kek" :src="image.src" />
+        <progressive-img :placeholder="placeholderIMG"  class="kek" :src="image.src" />
       </a>
     </div>
 
@@ -45,6 +45,7 @@ import Object13 from '@/assets/objects/object13.jpg';
 import Object14 from '@/assets/objects/object14.jpg';
 import Object15 from '@/assets/objects/object15.jpg';
 import Object16 from '@/assets/objects/object16.jpg';
+import placeholderIMG from '@/assets/placeholderIMG.jpg';
 
 export default {
   name: 'buildings',
@@ -53,6 +54,7 @@ export default {
   },
   data() {
     return {
+      placeholderIMG,
       images: [
         {
           src: Object1,
@@ -148,7 +150,7 @@ export default {
   margin 2rem 0 3rem
 .list-objects
   margin 1rem auto
-  width 90%
+  width 90% !important
 
 .object-click
   cursor pointer

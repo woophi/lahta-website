@@ -4,11 +4,17 @@ import Vue from 'vue';
 import Carousel3d from 'vue-carousel-3d';
 import Vuetify from 'vuetify';
 import VueProgressiveImage from 'vue-progressive-image';
+import VueLazyload from 'vue-lazyload';
 import App from './App';
 import router from './router';
 
 import('vuetify/dist/vuetify.min.css');
 
+Vue.use(VueLazyload, {
+  preLoad: 1,
+  loading: '@/assets/spinner.gif',
+  attempt: 1,
+});
 Vue.use(VueProgressiveImage);
 Vue.use(Carousel3d);
 Vue.use(Vuetify);
