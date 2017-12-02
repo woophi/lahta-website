@@ -1,12 +1,13 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '@/components/pages/Home';
-// import Shares from '@/components/pages/Shares';
-import Services from '@/components/pages/Services';
-import About from '@/components/pages/About';
-import Buildings from '@/components/pages/Buildings';
-import Licences from '@/components/pages/Licences';
-import Contacts from '@/components/pages/Contacts';
+
+const Home = () => import('@/components/pages/Home');
+const About = () => import('@/components/pages/About');
+const Services = () => import('@/components/pages/Services');
+const Buildings = () => import('@/components/pages/Buildings');
+const Licences = () => import('@/components/pages/Licences');
+const Contacts = () => import('@/components/pages/Contacts');
+const PageNotFound = () => import('@/components/pages/PageNotFound');
 
 Vue.use(Router);
 
@@ -23,11 +24,6 @@ export default new Router({
       name: 'about',
       component: About,
     },
-    // {
-    //   path: '/shares',
-    //   name: 'shares',
-    //   component: Shares,
-    // },
     {
       path: '/services',
       name: 'Services',
@@ -47,6 +43,10 @@ export default new Router({
       path: '/contacts',
       name: 'Contacts',
       component: Contacts,
+    },
+    { path: '*',
+      name: 'NotFound-404',
+      component: PageNotFound,
     },
   ],
 });

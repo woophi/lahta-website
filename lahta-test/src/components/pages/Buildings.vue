@@ -49,6 +49,14 @@ import placeholderIMG from '@/assets/placeholderIMG.jpg';
 
 export default {
   name: 'buildings',
+  metaInfo: {
+    title: 'ООО "ЛАХТА ИНЖИНИРИНГ СПБ"',
+    titleTemplate: '%s | Объекты',
+    meta: [
+      { name: 'description', content: 'ЛАХТА ИНЖИНИРИНГ СПБ предоставляет услуги по обслуживанию вентиляционных систем и автоматизации в Северо-Западном регионе, Москве и Московской области' },
+      { name: 'keywords', content: 'вентиляция кондиционирование проектирование установка монтаж сервисное обслуживание' },
+    ],
+  },
   components: {
     ListObjects,
   },
@@ -158,6 +166,9 @@ export default {
 
 .kek
   margin 1rem
+  &:hover
+    transform scale(1.05)
+    transition ease-in-out .2s
 
 .dialog
   max-width 900px !important

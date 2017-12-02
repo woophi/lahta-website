@@ -62,6 +62,14 @@ import { yandexMap, ymapMarker } from 'vue-yandex-maps';
 
 export default {
   name: 'contacts',
+  metaInfo: {
+    title: 'ООО "ЛАХТА ИНЖИНИРИНГ СПБ"',
+    titleTemplate: '%s | Контакты',
+    meta: [
+      { name: 'description', content: 'ЛАХТА ИНЖИНИРИНГ СПБ предоставляет услуги по обслуживанию вентиляционных систем и автоматизации в Северо-Западном регионе, Москве и Московской области' },
+      { name: 'keywords', content: 'вентиляция кондиционирование проектирование установка монтаж сервисное обслуживание' },
+    ],
+  },
   data() {
     return {
       zoomControl: {},

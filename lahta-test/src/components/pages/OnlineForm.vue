@@ -82,7 +82,6 @@ export default {
   methods: {
     submit() {
       if (this.$refs.form.validate()) {
-        // Native form submission is not yet supported
         axios.post('/mail.php', {
           name: this.name,
           email: this.email,

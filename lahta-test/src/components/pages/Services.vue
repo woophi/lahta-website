@@ -1,28 +1,48 @@
 <template>
   <div>
     <div class="main-wrapper">
-      <progressive-img  class="sxema" :src="Sxema" />
+      <progressive-img :placeholder="placeholderIMG" class="sxema" :src="Sxema" />
       <div class="main-card-flex">
         <div class="main-card">
           <p>
             <v-icon>fa-check</v-icon>
-            вентиляция
+            комплексная поставка оборудования внутренних инженерных систем
           </p>
           <p>
             <v-icon>fa-check</v-icon>
-            кондиционирование
+            монтаж внутренних инженерных систем
           </p>
           <p>
             <v-icon>fa-check</v-icon>
-            отопление
+            паспортизация вентиляционных систем
           </p>
           <p>
             <v-icon>fa-check</v-icon>
-            водоснабжение
+            настройка инженерного оборудования
           </p>
           <p>
             <v-icon>fa-check</v-icon>
-            автоматизация
+            пуско-наладочные работы систем отопления, вентиляции, автоматизации и кондиционирования
+          </p>
+          <p>
+            <v-icon>fa-check</v-icon>
+            сервисное и техническое обслуживание систем и инженерного оборудования
+          </p>
+          <p>
+            <v-icon>fa-check</v-icon>
+            ремонт агрегатов оборудования
+          </p>
+          <p>
+            <v-icon>fa-check</v-icon>
+            проектирование внутренних инженерных систем
+          </p>
+          <p>
+            <v-icon>fa-check</v-icon>
+            проектирование и монтаж систем центральной пылеуборки
+          </p>
+          <p>
+            <v-icon>fa-check</v-icon>
+            ремонт и техническое обслуживание промышленного холодильного и теплового оборудования
           </p>
         </div>
       </div>
@@ -36,12 +56,22 @@
 
 <script>
 import Sxema from '@/assets/sxhema.jpg';
+import placeholderIMG from '@/assets/placeholderIMG.jpg';
 
 export default {
   name: 'services',
+  metaInfo: {
+    title: 'ООО "ЛАХТА ИНЖИНИРИНГ СПБ"',
+    titleTemplate: '%s | Широкий спектр услуг.',
+    meta: [
+      { name: 'description', content: 'ЛАХТА ИНЖИНИРИНГ СПБ предоставляет услуги по обслуживанию вентиляционных систем и автоматизации в Северо-Западном регионе, Москве и Московской области' },
+      { name: 'keywords', content: 'вентиляция кондиционирование проектирование установка монтаж сервисное обслуживание' },
+    ],
+  },
   data() {
     return {
       Sxema,
+      placeholderIMG,
     };
   },
 };
@@ -67,6 +97,12 @@ export default {
   font-weight 500
   box-sizing border-box
 
+.main-card p
+  padding .5rem 0
+  &:hover
+    color #2E7BB2
+    transition ease-in-out .2s
+
 .main-wrapper
   justify-content center
   display flex
@@ -77,8 +113,9 @@ export default {
 
 .main-card-flex
   margin 0
+  width 55%
 
 .sxema
-  width 25%
+  width 30%
   min-width 250px
 </style>

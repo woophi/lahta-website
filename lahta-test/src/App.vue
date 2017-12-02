@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div>
-    <div class="main-header">
+    <header class="main-header">
       <div class="main-title">
-        <p class="main-title-header">ООО "ЛАХТА ИНЖИНИРИНГ СПБ"</p>
-        <span>Организация внутренних инженерных систем, зданий и сооружений.</span>
+        <h1 class="main-title-header">Организация внутренних инженерных систем, зданий и сооружений.</h1>
+        <p class="main-title-subheader">ООО "ЛАХТА ИНЖИНИРИНГ СПБ"</p>
         <div>
           <a href="tel:+78122402142">
             <v-btn
@@ -40,7 +40,7 @@
           </p>
         </div>
       </div>
-    </div>
+    </header>
 
     <nav class="navigation">
       <router-link  to="/" exact>
@@ -104,7 +104,9 @@
         </v-btn>
       </router-link>
     </nav>
-    <router-view class="super-height"></router-view>
+    <main class="super-height">
+      <router-view></router-view>
+    </main>
     <v-footer
       class="pa-3"
       color="grey darken-4"
@@ -163,7 +165,6 @@ body
   width 100%
   height 100%
 #app {
-  user-select none
   font-family: "SF Optimized", system-ui, -apple-system, BlinkMacSystemFont, ".SFNSText-Regular", "Segoe UI", "Roboto", sans-serif
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -198,13 +199,13 @@ a
   flex-direction column
   justify-content center
   margin auto
-  span
-    color rgba(255, 255, 255, 0.9)
-    font-size 18px
 
 .main-title-header
   font-size 2rem
   font-weight bold
+
+.main-title-subheader
+  font-size 2rem
 
 .main-card-flex
   margin auto

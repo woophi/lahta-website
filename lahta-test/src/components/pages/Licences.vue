@@ -19,6 +19,14 @@ import Licence4 from '@/assets/licence4.jpg';
 import Licence5 from '@/assets/licence5.jpg';
 
 export default {
+  metaInfo: {
+    title: 'ООО "ЛАХТА ИНЖИНИРИНГ СПБ"',
+    titleTemplate: '%s | Лицензии и сертификаты',
+    meta: [
+      { name: 'description', content: 'ЛАХТА ИНЖИНИРИНГ СПБ предоставляет услуги по обслуживанию вентиляционных систем и автоматизации в Северо-Западном регионе, Москве и Московской области' },
+      { name: 'keywords', content: 'вентиляция кондиционирование проектирование установка монтаж сервисное обслуживание' },
+    ],
+  },
   components: {
     Lightbox,
   },
