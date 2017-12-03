@@ -46,7 +46,6 @@ export default {
         .then(
           () => {
             previewDiv.remove();
-            window.scrollTo(0, 0);
           },
         );
     },

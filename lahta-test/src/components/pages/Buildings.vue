@@ -28,7 +28,6 @@
 </template>
 
 <script>
-import ListObjects from '@/components/pages/ListObjects';
 import Object1 from '@/assets/objects/object1.jpg';
 import Object2 from '@/assets/objects/object2.jpg';
 import Object3 from '@/assets/objects/object3.jpg';
@@ -46,6 +45,8 @@ import Object14 from '@/assets/objects/object14.jpg';
 import Object15 from '@/assets/objects/object15.jpg';
 import Object16 from '@/assets/objects/object16.jpg';
 import placeholderIMG from '@/assets/placeholderIMG.jpg';
+
+const ListObjects = () => import('@/components/pages/ListObjects');
 
 export default {
   name: 'buildings',

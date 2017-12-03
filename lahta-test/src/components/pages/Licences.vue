@@ -72,7 +72,7 @@ export default {
   display flex
   flex-wrap wrap
   margin auto
-  width 95%
+  width 80%
   > a
     width 22%
     margin 1rem auto

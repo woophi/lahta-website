@@ -129,8 +129,9 @@
 
 <script>
 import Spinner from '@/components/pages/Spinner';
-import Preview from '@/components/pages/Preview';
 import router from './router';
+
+const Preview = () => import('@/components/pages/Preview');
 
 export default {
   name: 'app',
