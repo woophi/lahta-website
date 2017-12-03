@@ -268,4 +268,8 @@ a
 
 .v-spinner
   margin auto
+
+@media screen and (max-width: 390px)
+  .super-height
+    min-height 160vh
 </style>
