@@ -164,6 +164,8 @@ export default {
 .object-click
   cursor pointer
   width 25%
+  min-width 315px
+  margin 0 auto
 
 .kek
   margin 1rem
