@@ -52,7 +52,7 @@ export default {
   background-image url('../../assets/backgroundMain.jpg')
   background-size cover
 .home-bcgrd
-  min-width 333px
+  min-width 300px
   display flex
   flex-direction column
   justify-content space-evenly

@@ -72,13 +72,14 @@ export default {
   display flex
   flex-wrap wrap
   margin auto
-  width 80%
+  width 100%
   > a
     width 22%
     margin 1rem auto
     display flex
-    min-width 320px
+    min-width 300px
   > a > img
+    min-width 300px
     width 100% !important
     height 300px !important
 </style>
