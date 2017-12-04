@@ -118,6 +118,7 @@
           <b>ИНН</b> 7811598377
           <b>КПП</b> 781101001
           © ООО "ЛАХТА ИНЖИНИРИНГ СПБ" {{ new Date().getFullYear() }}
+          создание сайта <b><u><a href="https://vk.com/space_goose" target="_blank" rel="nofollow noopener">Константин Михеев</a></u></b>
         </div>
       </v-footer>
     </div>
@@ -209,6 +210,7 @@ body
   box-shadow 0 0 1rem 0 rgba(0,0,0,0.5)
 
 a
+  cursor pointer
   text-decoration none
   color inherit
   &:hover, &:active, &:link
