@@ -6,6 +6,7 @@ var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var PrerenderSpaPlugin = require('prerender-spa-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
@@ -46,12 +47,19 @@ var webpackConfig = merge(baseWebpackConfig, {
         safe: true
       }
     }),
+    new PrerenderSpaPlugin(
+      // Absolute path to compiled SPA
+      path.resolve(__dirname, './dist'),
+      // List of routes to prerender
+      [ '/', '/about', '/contacts' ]
+    ),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: config.build.index,
       template: 'index.html',
+      favicon: 'favicon.ico',
       inject: true,
       minify: {
         removeComments: true,
