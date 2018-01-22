@@ -28,11 +28,11 @@
 export default {
   name: 'preview',
   methods: {
-    onScrolling() {
+    onScrolling(called) {
       const previewDiv = document.getElementById('scrolling-div');
       const titleDiv = document.getElementById('main-title');
       const promise = new Promise((resolve) => {
-        if (titleDiv && previewDiv && window.scrollY > 99) {
+        if (titleDiv && previewDiv && (window.scrollY > 99 || called)) {
           window.removeEventListener('scroll', this.onScrolling);
           previewDiv.classList.add('nullableDiv');
           previewDiv.classList.remove('scrollingDiv');
@@ -52,6 +52,9 @@ export default {
   },
   created() {
     window.addEventListener('scroll', this.onScrolling);
+  },
+  mounted() {
+    setTimeout(() => this.onScrolling(true), 5000);
   },
 };
 </script>
