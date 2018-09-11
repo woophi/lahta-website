@@ -1,8 +1,7 @@
 {
-  "name": "lahta-test",
-  "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "konst <konstantin.mikheev@icord.cz>",
+  "name": "lahta-portfolio-website",
+  "version": "1.0.1",
+  "author": "konst <attendentofsky@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
@@ -54,7 +53,7 @@
     "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^2.0.0",
     "ora": "^1.2.0",
-    "prerender-spa-plugin": "^2.1.0",
+    "prerender-spa-plugin": "^3.4.0",
     "rimraf": "^2.6.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
