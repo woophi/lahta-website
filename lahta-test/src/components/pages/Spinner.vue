@@ -1,5 +1,5 @@
 <template>
-<div class="v-spinner" v-show="loading">
+  <div class="v-spinner" v-show="loading">
     <div class="v-clip" v-bind:style="spinnerStyle">
     </div>
   </div>

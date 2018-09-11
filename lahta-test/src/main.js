@@ -3,7 +3,6 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 import VueProgressiveImage from 'vue-progressive-image';
-import VueLazyload from 'vue-lazyload';
 import Meta from 'vue-meta';
 import App from './App';
 import router from './router';
@@ -11,12 +10,6 @@ import router from './router';
 import('vuetify/dist/vuetify.min.css');
 
 Vue.use(Meta);
-Vue.use(VueLazyload, {
-  preLoad: 1,
-  loading: '@/assets/spinner.gif',
-  attempt: 1,
-  listenEvents: ['scroll'],
-});
 Vue.use(VueProgressiveImage);
 Vue.use(Vuetify);
 Vue.config.productionTip = false;

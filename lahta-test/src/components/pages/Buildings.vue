@@ -9,7 +9,7 @@
         class="object-click"
         @click.stop="image.open = true"
       >
-        <progressive-img :placeholder="placeholderIMG"  class="kek" :src="image.src" />
+        <progressive-img class="kek" :src="image.src" />
       </a>
     </div>
 
@@ -44,7 +44,6 @@ import Object13 from '@/assets/objects/object13.jpg';
 import Object14 from '@/assets/objects/object14.jpg';
 import Object15 from '@/assets/objects/object15.jpg';
 import Object16 from '@/assets/objects/object16.jpg';
-import placeholderIMG from '@/assets/placeholderIMG.jpg';
 
 const ListObjects = () => import('@/components/pages/ListObjects');
 
@@ -63,7 +62,6 @@ export default {
   },
   data() {
     return {
-      placeholderIMG,
       images: [
         {
           src: Object1,

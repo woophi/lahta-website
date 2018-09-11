@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="main-wrapper">
-      <progressive-img :placeholder="placeholderIMG" class="sxema" :src="Sxema" />
+      <progressive-img class="sxema" :src="Sxema" />
       <div class="main-card-flex">
         <div class="main-card">
           <p>
@@ -56,7 +56,6 @@
 
 <script>
 import Sxema from '@/assets/sxhema.jpg';
-import placeholderIMG from '@/assets/placeholderIMG.jpg';
 
 export default {
   name: 'services',
@@ -71,7 +70,6 @@ export default {
   data() {
     return {
       Sxema,
-      placeholderIMG,
     };
   },
 };

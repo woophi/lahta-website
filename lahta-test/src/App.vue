@@ -47,7 +47,7 @@
         <router-link  to="/" exact>
           <v-btn
             color="info"
-            :outline="!(routerPath === '/')"
+            :outline="(routerPath !== '/')"
           >
             <v-icon>fa-home</v-icon>
             &nbsp;
@@ -56,7 +56,7 @@
         </router-link>
         <router-link to="/about" exact>
           <v-btn
-            :outline="!(routerPath === '/about')"
+            :outline="(routerPath !== '/about')"
             color="info"
           >
             <v-icon>fa-bank</v-icon>
@@ -66,7 +66,7 @@
         </router-link>
         <router-link to="/services">
           <v-btn
-            :outline="!(routerPath === '/services')"
+            :outline="(routerPath !== '/services')"
             color="info"
           >
             <v-icon>fa-diamond</v-icon>
@@ -76,7 +76,7 @@
         </router-link>
         <router-link to="/buildings">
           <v-btn
-            :outline="!(routerPath === '/buildings')"
+            :outline="(routerPath !== '/buildings')"
             color="info"
           >
             <v-icon>fa-building</v-icon>
@@ -86,7 +86,7 @@
         </router-link>
         <router-link to="/licences">
           <v-btn
-            :outline="!(routerPath === '/licences')"
+            :outline="(routerPath !== '/licences')"
             color="info"
           >
             <v-icon>fa-book</v-icon>
@@ -96,7 +96,7 @@
         </router-link>
         <router-link to="/contacts">
           <v-btn
-            :outline="!(routerPath === '/contacts')"
+            :outline="(routerPath !== '/contacts')"
             color="info"
           >
             <v-icon>fa-pencil-square</v-icon>
@@ -122,14 +122,10 @@
         </div>
       </v-footer>
     </div>
-    <div v-if="loading" class="absolute-loader">
-      <Spinner color="#2e7bb3" ></Spinner>
-    </div>
   </div>
 </template>
 
 <script>
-import Spinner from '@/components/pages/Spinner';
 import router from './router';
 
 const Preview = () => import('@/components/pages/Preview');
@@ -137,25 +133,16 @@ const Preview = () => import('@/components/pages/Preview');
 export default {
   name: 'app',
   components: {
-    Spinner,
     Preview,
   },
   data() {
     return {
       routerPath: router.currentRoute.path,
       outline: true,
-      loading: true,
     };
   },
   beforeUpdate() {
     this.routerPath = router.currentRoute.path;
-  },
-  mounted() {
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => {
-      document.body.style.overflow = 'initial';
-      this.loading = false;
-    }, 1000);
   },
 };
 </script>
