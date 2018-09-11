@@ -52,7 +52,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       // Absolute path to compiled SPA
       staticDir: path.resolve(__dirname, '../dist'),
       // List of routes to prerender
-      routes: [ '/', '/about', '/contacts' ],
+      routes: [ '/', '/about', '/services', '/contacts' ],
       renderer: new PuppeteerRenderer({
         renderAfterElementExists: '#app'
       })
