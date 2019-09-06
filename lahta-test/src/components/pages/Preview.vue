@@ -1,5 +1,6 @@
 <template>
   <div id="scrolling-div" class="scrollingDiv">
+    <Languages></Languages>
     <div class="present">
       <div id="main-title" class="main-title">
         <h1 class="main-title-header">Организация внутренних инженерных систем, зданий и сооружений.</h1>
@@ -14,47 +15,54 @@
             </v-btn>
           </a>
         </div>
+        {{ $t("message.hello") }}
         <div class="scroll-downs">
           <div class="mousey">
             <div class="scroller"></div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Languages from '@/components/pages/Languages';
+
 export default {
   name: 'preview',
   methods: {
-    onScrolling(called) {
-      const previewDiv = document.getElementById('scrolling-div');
-      const titleDiv = document.getElementById('main-title');
-      const promise = new Promise((resolve) => {
-        if (titleDiv && previewDiv && (window.scrollY > 99 || called)) {
-          window.removeEventListener('scroll', this.onScrolling);
-          previewDiv.classList.add('nullableDiv');
-          previewDiv.classList.remove('scrollingDiv');
-          titleDiv.remove();
-          setTimeout(() => {
-            resolve();
-          }, 1500);
-        }
-      });
-      promise
-        .then(
-          () => {
-            previewDiv.remove();
-          },
-        );
-    },
+    // onScrolling(called) {
+    //   const previewDiv = document.getElementById('scrolling-div');
+    //   const titleDiv = document.getElementById('main-title');
+    //   const promise = new Promise((resolve) => {
+    //     if (titleDiv && previewDiv && (window.scrollY > 99 || called)) {
+    //       window.removeEventListener('scroll', this.onScrolling);
+    //       previewDiv.classList.add('nullableDiv');
+    //       previewDiv.classList.remove('scrollingDiv');
+    //       titleDiv.remove();
+    //       setTimeout(() => {
+    //         resolve();
+    //       }, 1500);
+    //     }
+    //   });
+    //   promise
+    //     .then(
+    //       () => {
+    //         previewDiv.remove();
+    //       },
+    //     );
+    // },
   },
   created() {
-    window.addEventListener('scroll', this.onScrolling);
+    // window.addEventListener('scroll', this.onScrolling);
   },
   mounted() {
-    setTimeout(() => this.onScrolling(true), 5000);
+    // setTimeout(() => this.onScrolling(true), 5000);
+  },
+  components: {
+    Languages
   },
 };
 </script>
@@ -67,6 +75,7 @@ export default {
   background-size cover
   width 100%
   height 100vh
+  position relative
 
 .nullableDiv
   height 0
