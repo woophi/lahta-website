@@ -1,149 +1,36 @@
 <template>
   <div id="app">
-    <Preview></Preview>
-    <div>
-      <header class="main-header">
-        <div class="main-title">
-          <h1 class="main-title-header">Организация внутренних инженерных систем, зданий и сооружений.</h1>
-          <p class="main-title-subheader">ООО "ЛАХТА ИНЖИНИРИНГ СПБ"</p>
-          <div>
-            <a href="tel:+78122402142">
-              <v-btn
-                flat
-              >
-                <v-icon>fa-phone</v-icon>&nbsp;
-                +7 (812) 240-21-42
-              </v-btn>
-            </a>
-          </div>
-        </div>
-        <div class="main-card-flex">
-          <div class="main-card">
-            <p>
-              <v-icon>fa-arrow-circle-o-right</v-icon>
-              вентиляция
-            </p>
-            <p>
-              <v-icon>fa-arrow-circle-o-right</v-icon>
-              кондиционирование
-            </p>
-            <p>
-              <v-icon>fa-arrow-circle-o-right</v-icon>
-              отопление
-            </p>
-            <p>
-              <v-icon>fa-arrow-circle-o-right</v-icon>
-              водоснабжение
-            </p>
-            <p>
-              <v-icon>fa-arrow-circle-o-right</v-icon>
-              автоматизация
-            </p>
-          </div>
-        </div>
-      </header>
-
-      <nav class="navigation">
-        <router-link  to="/" exact>
-          <v-btn
-            color="info"
-            :outline="(routerPath !== '/')"
-          >
-            <v-icon>fa-home</v-icon>
-            &nbsp;
-            Главная
-          </v-btn>
-        </router-link>
-        <router-link to="/about" exact>
-          <v-btn
-            :outline="(routerPath !== '/about')"
-            color="info"
-          >
-            <v-icon>fa-bank</v-icon>
-            &nbsp;
-            О Компании
-          </v-btn>
-        </router-link>
-        <router-link to="/services">
-          <v-btn
-            :outline="(routerPath !== '/services')"
-            color="info"
-          >
-            <v-icon>fa-diamond</v-icon>
-            &nbsp;
-            Услуги
-          </v-btn>
-        </router-link>
-        <router-link to="/buildings">
-          <v-btn
-            :outline="(routerPath !== '/buildings')"
-            color="info"
-          >
-            <v-icon>fa-building</v-icon>
-            &nbsp;
-            Объекты
-          </v-btn>
-        </router-link>
-        <router-link to="/licences">
-          <v-btn
-            :outline="(routerPath !== '/licences')"
-            color="info"
-          >
-            <v-icon>fa-book</v-icon>
-            &nbsp;
-            Лицензии и Сертификаты
-          </v-btn>
-        </router-link>
-        <router-link to="/contacts">
-          <v-btn
-            :outline="(routerPath !== '/contacts')"
-            color="info"
-          >
-            <v-icon>fa-pencil-square</v-icon>
-            &nbsp;
-            Контакты
-          </v-btn>
-        </router-link>
-      </nav>
-      <main class="super-height">
-        <router-view></router-view>
-      </main>
-      <v-footer
-        class="pa-3"
-        color="grey darken-4"
-      >
-        <v-spacer></v-spacer>
-        <div class="main-footer">
-          <b>ОГРН</b> 1147847436736
-          <b>ИНН</b> 7811598377
-          <b>КПП</b> 781101001
-          © ООО "ЛАХТА ИНЖИНИРИНГ СПБ" {{ new Date().getFullYear() }}
-          создание сайта <b><u><a href="https://vk.com/space_goose" target="_blank" rel="nofollow noopener">Константин Михеев</a></u></b>
-        </div>
-      </v-footer>
-    </div>
+    <Promo v-if="goto === null" :changeGoto="changeGoto"></Promo>
+    <VentSystems :changeGoto="changeGoto" v-if="goto === 'vent'"></VentSystems>
   </div>
 </template>
 
 <script>
+
 import router from './router';
 
-const Preview = () => import('@/components/pages/Preview');
+const VentSystems = () => import('@/components/pages/VentSystems');
+const Promo = () => import('@/components/pages/Promo');
 
 export default {
   name: 'app',
   components: {
-    Preview,
+    Promo,
+    VentSystems
   },
   data() {
     return {
-      routerPath: router.currentRoute.path,
-      outline: true,
+      goto: null
     };
   },
-  beforeUpdate() {
-    this.routerPath = router.currentRoute.path;
-  },
+  methods: {
+    changeGoto(route) {
+      this.goto = route;
+      if (router.currentRoute.path.indexOf(route) === -1) {
+        router.push(route);
+      }
+    },
+  }
 };
 </script>
 
@@ -160,28 +47,6 @@ body
   color: #2c3e50;
   font-size 16px !important
 }
-
-.scrollingDiv
-  background-color #2e7bb3
-  background-image url('./assets/backgroundMain.jpg')
-  background-size cover
-  width 100%
-  height 100vh
-
-.nullableDiv
-  height 0
-  transition ease 2s
-
-.present
-  background-color rgba(46, 123, 179, .7)
-  width 100%
-  height 100%
-  display flex
-  padding 0.5rem
-  flex-wrap wrap
-  flex 1
-  flex-grow 1
-  color #fff
 
 .super-height
   min-height 100vh
@@ -213,11 +78,11 @@ a
   margin auto
 
 .main-title-header
-  font-size 2rem
+  font-size 1.8rem
   font-weight bold
 
 .main-title-subheader
-  font-size 2rem
+  font-size 1.6rem
 
 .main-card-flex
   margin auto
@@ -261,4 +126,8 @@ a
 @media screen and (max-width: 390px)
   .super-height
     min-height 160vh
+
+.btn__content
+  flex unset !important
+  white-space: unset !important
 </style>

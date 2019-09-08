@@ -15,32 +15,32 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/vent',
       name: 'Home',
       component: Home,
     },
     {
-      path: '/about',
+      path: '/vent/about',
       name: 'about',
       component: About,
     },
     {
-      path: '/services',
+      path: '/vent/services',
       name: 'Services',
       component: Services,
     },
     {
-      path: '/buildings',
+      path: '/vent/buildings',
       name: 'Buildings',
       component: Buildings,
     },
     {
-      path: '/licences',
+      path: '/vent/licences',
       name: 'Licences',
       component: Licences,
     },
     {
-      path: '/contacts',
+      path: '/vent/contacts',
       name: 'Contacts',
       component: Contacts,
     },

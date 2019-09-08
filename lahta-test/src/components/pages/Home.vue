@@ -12,7 +12,6 @@
 
 <script>
 import placeholderIMG from '@/assets/placeholderIMG.jpg';
-import backgroundIMG from '@/assets/backgroundMain.jpg';
 
 export default {
   name: 'home',
@@ -27,7 +26,6 @@ export default {
   data() {
     return {
       placeholderIMG,
-      backgroundIMG,
     };
   },
 };
@@ -49,7 +47,7 @@ export default {
 .home-picture
   width 100%
   height 100vh
-  background-image url('../../assets/backgroundMain.jpg')
+  background-image url('../../assets/backgroundMain.png')
   background-size cover
 .home-bcgrd
   min-width 300px
