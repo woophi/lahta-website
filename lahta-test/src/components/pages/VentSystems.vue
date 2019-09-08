@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="goTo !== null">
     <header class="main-header">
       <div class="main-title">
         <h1 class="main-title-header">Организация внутренних инженерных систем, зданий и сооружений.</h1>
@@ -16,19 +16,19 @@
       <div class="main-card-flex">
         <div class="main-card">
           <p>
-            <v-icon>fa-arrow-circle-o-right</v-icon>вентиляция
+            <v-icon class="mr-2">fa-arrow-circle-o-right</v-icon>вентиляция
           </p>
           <p>
-            <v-icon>fa-arrow-circle-o-right</v-icon>кондиционирование
+            <v-icon class="mr-2">fa-arrow-circle-o-right</v-icon>кондиционирование
           </p>
           <p>
-            <v-icon>fa-arrow-circle-o-right</v-icon>отопление
+            <v-icon class="mr-2">fa-arrow-circle-o-right</v-icon>отопление
           </p>
           <p>
-            <v-icon>fa-arrow-circle-o-right</v-icon>водоснабжение
+            <v-icon class="mr-2">fa-arrow-circle-o-right</v-icon>водоснабжение
           </p>
           <p>
-            <v-icon>fa-arrow-circle-o-right</v-icon>автоматизация
+            <v-icon class="mr-2">fa-arrow-circle-o-right</v-icon>автоматизация
           </p>
         </div>
       </div>
@@ -96,13 +96,16 @@
       </div>
     </v-footer>
   </div>
+  <div v-else>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
 import router from '../../router';
 
 export default {
-  props: ['changeGoto'],
+  props: ['changeGoto', 'goTo'],
   data() {
     return {
       routerPath: router.currentRoute.path,
@@ -111,7 +114,10 @@ export default {
   },
   beforeUpdate() {
     this.routerPath = router.currentRoute.path;
-  },
+    if (router.currentRoute.path === '/') {
+      this.changeGoto(null);
+    }
+  }
 };
 </script>
 

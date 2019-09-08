@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Promo v-if="goto === null" :changeGoto="changeGoto"></Promo>
-    <VentSystems :changeGoto="changeGoto" v-if="goto === 'vent'"></VentSystems>
+    <VentSystems :goTo="goto" :changeGoto="changeGoto" v-if="goto === 'vent'"></VentSystems>
   </div>
 </template>
 
@@ -26,7 +26,10 @@ export default {
   methods: {
     changeGoto(route) {
       this.goto = route;
-      if (router.currentRoute.path.indexOf(route) === -1) {
+      if (
+          !!route &&
+          router.currentRoute.path.indexOf(route) === -1
+        ) {
         router.push(route);
       }
     },

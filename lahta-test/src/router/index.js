@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 const Home = () => import('@/components/pages/Home');
+const First = () => import('@/components/pages/First');
 const About = () => import('@/components/pages/About');
 const Services = () => import('@/components/pages/Services');
 const Buildings = () => import('@/components/pages/Buildings');
@@ -14,6 +15,11 @@ Vue.use(Router);
 export default new Router({
   mode: 'history',
   routes: [
+    {
+      path: '/',
+      name: 'First',
+      component: First,
+    },
     {
       path: '/vent',
       name: 'Home',
