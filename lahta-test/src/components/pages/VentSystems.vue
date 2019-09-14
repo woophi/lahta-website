@@ -117,7 +117,20 @@ export default {
     if (router.currentRoute.path === '/') {
       this.changeGoto(null);
     }
-  }
+  },
+  updated() {
+    if (
+      this.goTo === 'vent' &&
+      router.currentRoute.path.indexOf('raw') !== -1
+    ) {
+      this.changeGoto('raw');
+    } else if (
+      this.goTo === 'raw' &&
+      router.currentRoute.path.indexOf('vent') !== -1
+    ) {
+      this.changeGoto('vent');
+    }
+  },
 };
 </script>
 

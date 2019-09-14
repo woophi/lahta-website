@@ -8,6 +8,7 @@
         :counter="50"
         required
         class="input-group--focused"
+        :color="color || 'primary'"
       ></v-text-field>
       <v-text-field
         label="E-mail"
@@ -15,6 +16,7 @@
         :rules="emailRules"
         required
         class="input-group--focused"
+        :color="color || 'primary'"
       ></v-text-field>
       <v-text-field
         label="Сообщение"
@@ -24,6 +26,7 @@
         rows="6"
         required
         class="input-group--focused"
+        :color="color || 'primary'"
       ></v-text-field>
       <v-btn
         v-if="!valid"
@@ -37,7 +40,7 @@
         v-else
         @click="submit"
         outline
-        color="info"
+        :color="color ? 'green darken-3' : 'info'"
         class="btn-submit"
       >
         Отправить
@@ -59,6 +62,7 @@ import axios from 'axios';
 
 export default {
   name: 'shares',
+  props: ['color'],
   data() {
     return {
       valid: false,
@@ -108,7 +112,7 @@ form
   display flex
   flex-direction column
   min-width 250px
-  max-width 500px
+  width 100%
 
 .btn-submit
   display flex

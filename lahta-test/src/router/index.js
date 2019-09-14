@@ -9,6 +9,10 @@ const Buildings = () => import('@/components/pages/Buildings');
 const Licences = () => import('@/components/pages/Licences');
 const Contacts = () => import('@/components/pages/Contacts');
 const PageNotFound = () => import('@/components/pages/PageNotFound');
+const RawHome = () => import('@/components/pages/RawHome');
+const RawAbout = () => import('@/components/pages/RawAbout');
+const RawServices = () => import('@/components/pages/RawServices');
+const RawContacts = () => import('@/components/pages/RawContacts');
 
 Vue.use(Router);
 
@@ -49,6 +53,26 @@ export default new Router({
       path: '/vent/contacts',
       name: 'Contacts',
       component: Contacts,
+    },
+    {
+      path: '/raw',
+      name: 'rawHome',
+      component: RawHome,
+    },
+    {
+      path: '/raw/about',
+      name: 'rawAbout',
+      component: RawAbout,
+    },
+    {
+      path: '/raw/services',
+      name: 'rawServices',
+      component: RawServices,
+    },
+    {
+      path: '/raw/contacts',
+      name: 'rawContacts',
+      component: RawContacts,
     },
     { path: '*',
       name: 'NotFound-404',

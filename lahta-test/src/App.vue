@@ -2,6 +2,7 @@
   <div id="app">
     <Promo v-if="goto === null" :changeGoto="changeGoto"></Promo>
     <VentSystems :goTo="goto" :changeGoto="changeGoto" v-if="goto === 'vent'"></VentSystems>
+    <RawStuff :goTo="goto" :changeGoto="changeGoto" v-if="goto === 'raw'"></RawStuff>
   </div>
 </template>
 
@@ -10,13 +11,15 @@
 import router from './router';
 
 const VentSystems = () => import('@/components/pages/VentSystems');
+const RawStuff = () => import('@/components/pages/RawStuff');
 const Promo = () => import('@/components/pages/Promo');
 
 export default {
   name: 'app',
   components: {
     Promo,
-    VentSystems
+    VentSystems,
+    RawStuff
   },
   data() {
     return {
@@ -30,6 +33,20 @@ export default {
           !!route &&
           router.currentRoute.path.indexOf(route) === -1
         ) {
+        if (
+          router.currentRoute.path.indexOf('raw') !== -1 &&
+          route === 'vent'
+        ) {
+          router.push('/vent');
+          return;
+        }
+        if (
+          router.currentRoute.path.indexOf('vent') !== -1 &&
+          route === 'raw'
+        ) {
+          router.push('/raw');
+          return;
+        }
         router.push(route);
       }
     },
