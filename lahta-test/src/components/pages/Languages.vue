@@ -54,10 +54,12 @@ export default {
   top 1rem
 .ru
   width 25px
+  height 25px
   margin-right .5rem
   cursor pointer
 .en
   width 25px
+  height 25px
   cursor pointer
 
 </style>
