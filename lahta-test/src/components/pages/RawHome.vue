@@ -3,6 +3,12 @@
     <div class="home-innerContainer">
       <div class="home-bcgrd white-text">
         <h2 class="white-text"><b>LAHTA SPB</b> Поставки ингредиентов пищевой и парфюмерной промышленности. Логистические услуги.</h2>
+        <router-link to="/raw/contacts" exact>
+          <v-btn color="green darken-3" class="white-text">
+            Связаться с нами
+            <v-icon class="ml-2">fa-arrow-circle-right</v-icon>
+          </v-btn>
+        </router-link>
       </div>
       <div class="home-picture"></div>
     </div>
@@ -53,6 +59,7 @@ export default {
   left 0
   z-index 2
   padding 1rem
+  justify-content: space-evenly;
   > h2
     text-align left
     max-width 75rem

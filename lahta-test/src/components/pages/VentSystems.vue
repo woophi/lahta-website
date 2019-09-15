@@ -87,7 +87,7 @@
         <b>
           <u>
             <a
-              href="https://vk.com/space_goose"
+              href="http://km-webstudio.xyz/contact.html"
               target="_blank"
               rel="nofollow noopener"
             >Константин Михеев</a>

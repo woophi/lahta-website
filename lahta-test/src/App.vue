@@ -16,6 +16,13 @@ const Promo = () => import('@/components/pages/Promo');
 
 export default {
   name: 'app',
+  metaInfo: {
+    title: 'ООО "ЛАХТА ИНЖИНИРИНГ СПБ" | LAHTA SPB',
+    meta: [
+      { name: 'description', content: 'Организация внутренних инженерных систем, зданий и сооружений. Логистические услуги' },
+      { name: 'keywords', content: 'доставки груза «от двери до двери»; вентиляция кондиционирование проектирование' },
+    ],
+  },
   components: {
     Promo,
     VentSystems,
