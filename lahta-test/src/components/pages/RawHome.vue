@@ -2,10 +2,10 @@
   <div class="home-container">
     <div class="home-innerContainer">
       <div class="home-bcgrd white-text">
-        <h2 class="white-text"><b>LAHTA SPB</b> Поставки ингредиентов пищевой и парфюмерной промышленности. Логистические услуги.</h2>
+        <h2 class="white-text"><b>LAHTA SPB</b> {{ $t("raw.mainTitle") }}</h2>
         <router-link to="/raw/contacts" exact>
           <v-btn color="green darken-3" class="white-text">
-            Связаться с нами
+            {{ $t("raw.contactUs") }}
             <v-icon class="ml-2">fa-arrow-circle-right</v-icon>
           </v-btn>
         </router-link>

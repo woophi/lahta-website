@@ -2,13 +2,13 @@
   <div class="row dark-accent">
     <div class="cards-column">
         <div class="card-container dark-aa mt-2">
-            <div class="card-content white-text">Разрабатываем оптимальную схему доставки груза «от двери до двери»</div>
+            <div class="card-content white-text">{{ $t("raw.services.shipping") }}</div>
         </div>
         <div class="card-container white-back">
             <div class="card-img">
                 <img :src="Track" class="img" alt="Logistics image">
             </div>
-            <div class="card-content">Информируем о местонахождении груза</div>
+            <div class="card-content">{{ $t("raw.services.tracking") }}</div>
         </div>
     </div>
     <div class="cards-column">
@@ -16,27 +16,27 @@
             <div class="card-img">
                 <img :src="Docs" class="img" alt="Logistics image">
             </div>
-            <div class="card-content">Оформляем транспортные и таможенные документы</div>
+            <div class="card-content">{{ $t("raw.services.docs") }}</div>
         </div>
         <div class="card-container white-back mt-2">
-            <div class="card-content">Хранение сыпучих грузов, охлажденных товаров</div>
+            <div class="card-content">{{ $t("raw.services.store1") }}</div>
         </div>
         <div class="card-container white-back mt-2">
-            <div class="card-content">Хранение при высокой заморозке</div>
+            <div class="card-content">{{ $t("raw.services.store2") }}</div>
         </div>
         <div class="card-container white-back mt-2">
-            <div class="card-content">Хранение грузов небольших объемов</div>
+            <div class="card-content">{{ $t("raw.services.store3") }}</div>
         </div>
     </div>
     <div class="cards-column">
         <div class="card-container green-color mt-2">
-            <div class="card-content white-text">Гарантируем качество и надежность предоставляемых услуг</div>
+            <div class="card-content white-text">{{ $t("raw.services.quality") }}</div>
         </div>
         <div class="card-container white-back">
             <div class="card-img">
                 <img :src="Gruz" class="img" alt="Logistics image">
             </div>
-            <div class="card-content">Осуществляем погрузочно-разгрузочные работы</div>
+            <div class="card-content">{{ $t("raw.services.cargo") }}</div>
         </div>
     </div>
   </div>

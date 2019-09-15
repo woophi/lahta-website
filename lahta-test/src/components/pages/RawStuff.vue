@@ -2,30 +2,35 @@
   <div v-if="goTo !== null">
     <header class="main-header dark-accent white-text">
       <div class="raw-title">
-        <span class="main-title-subheader mx-2 my-2">LAHTA SPB</span>
+        <span class="main-title-subheader d-flex">
+          <span class="mx-2 my-2">LAHTA SPB</span>
+          <span class="langs">
+            <Languages></Languages>
+          </span>
+        </span>
         <nav class="navigation">
           <router-link to="/raw" exact>
             <v-btn color="green darken-3"  class="white-text" :style="routerPath === '/raw' ? selectedBtn : {}">
               <v-icon>fa-home</v-icon>&nbsp;
-              Главная
+              {{ $t("raw.topBar.home") }}
             </v-btn>
           </router-link>
           <router-link to="/raw/about" exact>
             <v-btn color="green darken-3" class="white-text" :style="routerPath === '/raw/about' ? selectedBtn : {}">
               <v-icon>fa-bank</v-icon>&nbsp;
-              О Компании
+              {{ $t("raw.topBar.about") }}
             </v-btn>
           </router-link>
           <router-link to="/raw/services">
             <v-btn color="green darken-3" class="white-text" :style="routerPath === '/raw/services' ? selectedBtn : {}">
               <v-icon>fa-diamond</v-icon>&nbsp;
-              Услуги
+              {{ $t("raw.topBar.services") }}
             </v-btn>
           </router-link>
           <router-link to="/raw/contacts">
             <v-btn color="green darken-3" class="white-text" :style="routerPath === '/raw/contacts' ? selectedBtn : {}">
               <v-icon>fa-pencil-square</v-icon>&nbsp;
-              Контакты
+              {{ $t("raw.topBar.contacts") }}
             </v-btn>
           </router-link>
         </nav>
@@ -48,14 +53,14 @@
       <v-spacer></v-spacer>
       <div class="main-footer blue-text footeradd">
         <span>
-          создание сайта
+          {{ $t("footer.developedBy") }}
           <b>
             <u>
               <a
                 href="http://km-webstudio.xyz/contact.html"
                 target="_blank"
                 rel="nofollow noopener"
-              >Константин Михеев</a>
+              >{{ $t("footer.KM") }}</a>
             </u>
           </b>
         </span>
@@ -70,6 +75,7 @@
 
 <script>
 import router from '../../router';
+import Languages from './Languages';
 
 export default {
   props: ['changeGoto', 'goTo'],
@@ -102,6 +108,9 @@ export default {
       this.changeGoto('vent');
     }
   },
+  components: {
+    Languages
+  }
 };
 </script>
 
@@ -137,4 +146,8 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
+
+.langs
+  position relative
+  bottom 2px
 </style>

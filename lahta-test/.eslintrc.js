@@ -45,11 +45,12 @@ module.exports = {
     // disallow indentation using both tabs and spaces
     'no-mixed-spaces-and-tabs': 2,
     // ensure consistent 2 space indentation and indent cases under switch
-    'indent': [2, 2, {'SwitchCase': 1}],
+    'indent': 0,
     'object-curly-spacing': [2, 'always'],
     'max-statements': [2, 24],
     'eol':  0,
     'linebreak-style': 0,
-    'comma-dangle': 0
+    'comma-dangle': 0,
+    'no-mixed-operators': 0
   }
 }

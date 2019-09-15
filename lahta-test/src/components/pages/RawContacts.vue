@@ -7,7 +7,7 @@
             <div class="contacts-form">
                 <h3>
                 <v-icon>fa-envelope-o</v-icon>
-                Онлайн заявка
+                {{ $t("raw.contacts.request") }}
                 </h3>
                 <OnlineForm :color="'grey darken-4'"></OnlineForm>
             </div>
@@ -16,13 +16,13 @@
             <div class="contatcs-info">
                 <h3>
                 <v-icon>fa-address-card-o</v-icon>
-                Контакты
+                {{ $t("raw.contacts.contacts") }}
                 </h3>
                 <v-icon>fa-location-arrow</v-icon>
-                <div class="address">193091, Санкт-Петербург, Октябрьская наб., д. 6, лит. М, пом. 10-Н,
+                <div class="address">{{ $t("raw.contacts.address") }}
                 </div>
                 <v-icon>fa-phone</v-icon>
-                <div class="tel-mob">тел/факс: <a class="blue-text" href="tel:+78122402142">+7 (812) 240-21-42</a>
+                <div class="tel-mob">{{ $t("raw.contacts.tel") }} <a class="blue-text" href="tel:+78122402142">+7 (812) 240-21-42</a>
                 </div>
                 <v-icon>fa-envelope</v-icon>
                 <div class="mail">
@@ -34,7 +34,7 @@
             <div class="contacts-map">
                 <h3>
                 <v-icon>fa-map-o</v-icon>
-                Карта
+                {{ $t("raw.contacts.map") }}
                 </h3>
                 <yandex-map
                 :coords="[59.912021, 30.422444]"

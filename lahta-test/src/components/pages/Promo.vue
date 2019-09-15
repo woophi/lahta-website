@@ -3,8 +3,11 @@
     <div class="promo-pic1" :style="styleObject1"></div>
     <div class="promo-pic2" :style="styleObject2"></div>
     <div class="promo-title">
-      <div class="promo-title-main">ООО "ЛАХТА ИНЖИНИРИНГ СПБ" + LAHTA SPB</div>
-      <div>Санкт-Петербург</div>
+      <span style="width: 145px">
+        <Languages></Languages>
+      </span>
+      <div class="promo-title-main">{{ $t("companyLahtaEng") }} + LAHTA SPB</div>
+      <div>{{ $t("spb") }}</div>
     </div>
     <div class="promo-btns">
       <v-btn
@@ -13,7 +16,7 @@
         @click="changeGoto('vent')"
         @mouseenter="mEnterVent(true)"
         @mouseleave="mEnterVent(false)"
-      >Организация инженерных систем<v-icon class="ml-2">fa-arrow-circle-right</v-icon></v-btn>
+      >{{ $t("promo.vent") }}<v-icon class="ml-2">fa-arrow-circle-right</v-icon></v-btn>
       <v-btn
         outline
         :color="rawColor"
@@ -21,8 +24,7 @@
         @mouseenter="mEnterRaw(true)"
         @mouseleave="mEnterRaw(false)"
       >
-        Логистика. Поставки ингредиентов пищевой и
-        парфюмерной промышленности<v-icon class="ml-2">fa-arrow-circle-right</v-icon>
+        {{ $t("promo.raw") }}<v-icon class="ml-2">fa-arrow-circle-right</v-icon>
       </v-btn>
     </div>
     <div
@@ -35,6 +37,7 @@
 <script>
 import BgrM from '@/assets/backgroundMain.png';
 import BgrM2 from '@/assets/backgroundMain3.jpg';
+import Languages from './Languages';
 
 export default {
   props: ['changeGoto'],
@@ -78,6 +81,9 @@ export default {
         this.styleObject2.opacity = 0;
       }
     },
+  },
+  components: {
+    Languages
   }
 };
 </script>

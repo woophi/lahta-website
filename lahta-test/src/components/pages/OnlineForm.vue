@@ -2,7 +2,7 @@
   <div>
     <v-form v-model="valid" ref="form">
       <v-text-field
-        label="Имя"
+        :label="$t('form.name')"
         v-model="name"
         :rules="nameRules"
         :counter="50"
@@ -11,7 +11,7 @@
         :color="color || 'primary'"
       ></v-text-field>
       <v-text-field
-        label="E-mail"
+        :label="$t('form.email')"
         v-model="email"
         :rules="emailRules"
         required
@@ -19,7 +19,7 @@
         :color="color || 'primary'"
       ></v-text-field>
       <v-text-field
-        label="Сообщение"
+        :label="$t('form.message')"
         v-model="text"
         :rules="textRules"
         multi-line
@@ -34,7 +34,7 @@
         color="grey"
         class="btn-submit"
       >
-        Отправить
+        {{ $t("form.send") }}
       </v-btn>
       <v-btn
         v-else
@@ -43,13 +43,13 @@
         :color="color ? 'green darken-3' : 'info'"
         class="btn-submit"
       >
-        Отправить
+        {{ $t("form.send") }}
       </v-btn>
     </v-form>
     <v-dialog v-model="sent" class="dialog-form">
       <v-card>
         <v-card-title class="card-title-form">
-          <b class="card-header">Спасибо {{name}}, за Ваше сообщение. С Вами свяжутся в ближайщее время.</b>
+          <b class="card-header">{{ $t("form.thx", { name }) }}</b>
           <v-btn class="card-btn-absolute" @click.stop="clear"><v-icon>fa-times</v-icon></v-btn>
         </v-card-title>
       </v-card>
