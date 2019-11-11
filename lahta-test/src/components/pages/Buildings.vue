@@ -2,6 +2,7 @@
 <v-app id="inspire" >
 
   <div class="all-objects">
+    <ListObjects class="list-objects"></ListObjects>
     <div class="objects-grid">
       <a
         v-for="(image,i) in images"
@@ -16,13 +17,12 @@
     <v-dialog v-model="image.open" v-for="(image,i) in images" :key="i">
       <v-card>
         <v-card-title class="card-title">
-          <b class="card-header">{{image.title}}</b>
+          <b class="card-header">{{$t('vent.objects' + image.id)}}</b>
           <v-btn class="card-btn-absolute" @click.stop="image.open=false"><v-icon>fa-times</v-icon></v-btn>
         </v-card-title>
         <progressive-img :src="image.src" />
       </v-card>
     </v-dialog>
-    <ListObjects class="list-objects"></ListObjects>
   </div>
 </v-app>
 </template>
@@ -64,84 +64,84 @@ export default {
     return {
       images: [
         {
+          id: 'one',
           src: Object1,
-          title: 'Конгрессно-выставочный центр Экспофорум, г. Санкт-Петербург',
           open: false,
         },
         {
           src: Object2,
-          title: 'Ладожский вокзал, г. Санкт-Петербург',
           open: false,
+          id: 'two'
         },
         {
           src: Object3,
-          title: 'Логоцентр  «МЛП-КАД», г. Санкт-Петербург',
           open: false,
+          id: 'three'
         },
         {
           src: Object4,
-          title: 'Медсанчасть № 70, г. Санкт-Петербург',
           open: false,
+          id: 'four'
         },
         {
           src: Object5,
-          title: 'Жилой комплекс «Дача Винтера», г. Сортавала, республика Карелия',
           open: false,
+          id: 'five'
         },
         {
           src: Object6,
-          title: 'Центр обслуживания населения, Богатырский проспект, г. Санкт-Петербург',
           open: false,
+          id: 'six'
         },
         {
           src: Object7,
-          title: 'БЦ «Биржа», В.О. 26 линия, г. Санкт-Петербург',
           open: false,
+          id: 'seven'
         },
         {
           src: Object8,
-          title: 'ЖК «Престиж», В.О. 26 линия, г. Санкт-Петербург',
           open: false,
+          id: 'eight'
         },
         {
           src: Object9,
-          title: 'ЖК «Московские Ворота», г. Санкт-Петербург',
           open: false,
+          id: 'nine'
         },
         {
           src: Object10,
-          title: 'Таможенно-логистический комплекс «Осиновая роща», г. Санкт-Петербург',
           open: false,
+          id: 'ten'
         },
         {
           src: Object11,
-          title: 'Суд Невского района, г. Санкт-Петербург',
           open: false,
+          id: 'eleven'
         },
         {
           src: Object12,
-          title: 'Элитное строительство «Greenfield», г. Москва',
           open: false,
+          id: 'twelve'
         },
         {
           src: Object13,
-          title: '«Северный Версаль», Приморский район, г. Санкт-Петербург',
           open: false,
+          id: 'thirteen'
         },
         {
           src: Object14,
-          title: 'Коттеджный поселок «Консульская деревня», Репино, г. Санкт-Петербург',
           open: false,
+          id: 'fourteen'
         },
         {
           src: Object15,
-          title: 'Завод «Штурманские приборы», г. Санкт-Петербург',
           open: false,
+          id: 'fifteen'
         },
         {
           src: Object16,
-          title: 'АО «Ленгазспецстрой», г. Санкт-Петербург',
           open: false,
+          id: 'sixteen'
         },
       ],
       options: {

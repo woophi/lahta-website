@@ -1,12 +1,12 @@
 <template>
   <v-expansion-panel>
     <v-expansion-panel-content>
-      <div slot="header">Список проектов</div>
+      <div slot="header">{{ $t("vent.objectsList.title") }}</div>
       <v-card>
         <v-card-text class="grey lighten-3">
           <v-expansion-panel>
             <v-expansion-panel-content>
-              <div slot="header">до 2014</div>
+              <div slot="header">{{ $t("vent.objectsList.before") }}</div>
               <v-card>
                 <v-card-text class="grey lighten-3">
                   <ul>
@@ -37,7 +37,7 @@
           </v-expansion-panel>
           <v-expansion-panel>
             <v-expansion-panel-content>
-              <div slot="header">2014-2016 гг</div>
+              <div slot="header">{{ $t("vent.objectsList.between") }}</div>
               <v-card>
                 <v-card-text class="grey lighten-3">
                 <ul>
@@ -63,7 +63,7 @@
           </v-expansion-panel>
           <v-expansion-panel>
             <v-expansion-panel-content>
-              <div slot="header">Элитное строительство</div>
+              <div slot="header">{{ $t("vent.objectsList.elite") }}</div>
               <v-card>
                 <v-card-text class="grey lighten-3">
                 <ul>

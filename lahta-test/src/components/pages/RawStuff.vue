@@ -10,7 +10,7 @@
         </span>
         <nav class="navigation">
           <router-link to="/raw" exact>
-            <v-btn color="green darken-3"  class="white-text" :style="routerPath === '/raw' ? selectedBtn : {}">
+            <v-btn color="green darken-3" class="white-text" :style="routerPath === '/raw' ? selectedBtn : {}">
               <v-icon>fa-home</v-icon>&nbsp;
               {{ $t("raw.topBar.home") }}
             </v-btn>
@@ -45,7 +45,7 @@
       </div>
     </header>
 
-    
+
     <main class="main-height">
       <router-view></router-view>
     </main>

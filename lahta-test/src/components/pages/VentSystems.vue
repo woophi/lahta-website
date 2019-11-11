@@ -2,8 +2,8 @@
   <div v-if="goTo !== null">
     <header class="main-header">
       <div class="main-title">
-        <h1 class="main-title-header">Организация внутренних инженерных систем, зданий и сооружений.</h1>
-        <p class="main-title-subheader">ООО "ЛАХТА ИНЖИНИРИНГ СПБ"</p>
+        <h1 class="main-title-header">{{ $t("vent.main.title") }}</h1>
+        <p class="main-title-subheader">{{ $t("companyLahtaEng") }}</p>
         <div>
           <a href="tel:+78122402142">
             <v-btn flat>
@@ -16,19 +16,19 @@
       <div class="main-card-flex">
         <div class="main-card">
           <p>
-            <v-icon class="mr-2">fa-arrow-circle-o-right</v-icon>вентиляция
+            <v-icon class="mr-2">fa-arrow-circle-o-right</v-icon>{{ $t("vent.main.side.vent") }}
           </p>
           <p>
-            <v-icon class="mr-2">fa-arrow-circle-o-right</v-icon>кондиционирование
+            <v-icon class="mr-2">fa-arrow-circle-o-right</v-icon>{{ $t("vent.main.side.cond") }}
           </p>
           <p>
-            <v-icon class="mr-2">fa-arrow-circle-o-right</v-icon>отопление
+            <v-icon class="mr-2">fa-arrow-circle-o-right</v-icon>{{ $t("vent.main.side.warm") }}
           </p>
           <p>
-            <v-icon class="mr-2">fa-arrow-circle-o-right</v-icon>водоснабжение
+            <v-icon class="mr-2">fa-arrow-circle-o-right</v-icon>{{ $t("vent.main.side.water") }}
           </p>
           <p>
-            <v-icon class="mr-2">fa-arrow-circle-o-right</v-icon>автоматизация
+            <v-icon class="mr-2">fa-arrow-circle-o-right</v-icon>{{ $t("vent.main.side.autom") }}
           </p>
         </div>
       </div>
@@ -38,37 +38,37 @@
       <router-link to="/vent" exact>
         <v-btn color="info" :outline="(routerPath !== '/vent')">
           <v-icon>fa-home</v-icon>&nbsp;
-          Главная
+          {{ $t("vent.main.topBar.home") }}
         </v-btn>
       </router-link>
       <router-link to="/vent/about" exact>
         <v-btn :outline="(routerPath !== '/vent/about')" color="info">
           <v-icon>fa-bank</v-icon>&nbsp;
-          О Компании
+          {{ $t("vent.main.topBar.about") }}
         </v-btn>
       </router-link>
       <router-link to="/vent/services">
         <v-btn :outline="(routerPath !== '/vent/services')" color="info">
           <v-icon>fa-diamond</v-icon>&nbsp;
-          Услуги
+          {{ $t("vent.main.topBar.services") }}
         </v-btn>
       </router-link>
       <router-link to="/vent/buildings">
         <v-btn :outline="(routerPath !== '/vent/buildings')" color="info">
           <v-icon>fa-building</v-icon>&nbsp;
-          Объекты
+          {{ $t("vent.main.topBar.objects") }}
         </v-btn>
       </router-link>
       <router-link to="/vent/licences">
         <v-btn :outline="(routerPath !== '/vent/licences')" color="info">
           <v-icon>fa-book</v-icon>&nbsp;
-          Лицензии и Сертификаты
+          {{ $t("vent.main.topBar.licences") }}
         </v-btn>
       </router-link>
       <router-link to="/vent/contacts">
         <v-btn :outline="(routerPath !== '/vent/contacts')" color="info">
           <v-icon>fa-pencil-square</v-icon>&nbsp;
-          Контакты
+          {{ $t("vent.main.topBar.contacts") }}
         </v-btn>
       </router-link>
     </nav>
@@ -82,15 +82,15 @@
         <b>ИНН</b> 7811598377
         <b>КПП</b>
         781101001
-        © ООО "ЛАХТА ИНЖИНИРИНГ СПБ" {{ new Date().getFullYear() }}
-        создание сайта
+        © {{ $t("companyLahtaEng") }} {{ new Date().getFullYear() }}
+        {{ $t("footer.developedBy") }}
         <b>
           <u>
             <a
               href="http://km-webstudio.xyz/contact.html"
               target="_blank"
               rel="nofollow noopener"
-            >Константин Михеев</a>
+            >{{ $t("footer.KM") }}</a>
           </u>
         </b>
       </div>
